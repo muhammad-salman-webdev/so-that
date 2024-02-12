@@ -1,0 +1,180 @@
+/* ============================== */
+/* ========= GOODLE FONTS ======= */
+/* ============================== */
+
+@import url("https://fonts.googleapis.com/css2?family=Playfair+Display:wght@400;500;600;700;800;900&family=Spline+Sans:wght@300;400;500;600;700&display=swap");
+
+/* ============================== */
+/* ====== GLOBAL VARIABLES ====== */
+/* ============================== */
+
+:root {
+  /* Main Shades */
+  --primary: #384c63;
+  --secondary: #6c85a1;
+  --tertiary: #699bcc;
+  --contrast: #5a5dff;
+  --overlay-bg: #384c63de;
+
+  /* White Shades */
+  --w-1: #c7c7c7;
+  --w-2: #e6e6e6;
+  --w-3: #f2f2f2;
+  --w-4: #f9f9f9;
+  --w-5: #fdfdfd;
+
+  /* Orange Shades */
+  --orange: #cc6f69;
+  --s-orange: #ff958e;
+
+  /* Font Families */
+  --p-font-family: "Playfair Display", serif;
+  --s-font-family: "Spline Sans", sans-serif;
+}
+
+/* ============================== */
+/* ===== UNIVERSAL SELECTOR ===== */
+/* ============================== */
+
+* {
+  margin: 0;
+  padding: 0;
+  box-sizing: border-box;
+  text-decoration: none;
+  font-family: var(--s-font-family);
+}
+
+html {
+  scroll-behavior: smooth;
+}
+
+.popup-section {
+  inset: 0;
+  background: var(--overlay-bg);
+  position: fixed;
+  display: flex;
+  justify-content: center;
+  align-items: end;
+  padding-bottom: 100px;
+  z-index: 999;
+  overflow: auto;
+}
+.popup-container {
+  background: var(--w-3);
+  width: 1128px;
+  display: flex;
+  padding: 48px 86px;
+  gap: 30px;
+}
+.popup-container h1 {
+  font-weight: 400;
+  font-size: 48px;
+  color: var(--primary);
+  text-transform: uppercase;
+  font-family: var(--p-font-family);
+  line-height: 58px;
+}
+.popup-container h1 span {
+  font-family: var(--p-font-family);
+  font-weight: 700;
+}
+.popup-container p {
+  font-size: 20px;
+  font-weight: 400;
+  color: var(--primary);
+}
+.popup-container .buttons {
+  min-width: 160px;
+  display: flex;
+  flex-direction: column;
+  gap: 10px;
+}
+.popup-container .buttons button {
+  width: 160px;
+  padding: 12px 0;
+  cursor: pointer;
+  border: 1px solid var(--primary);
+  transition: all 0.3s ease;
+}
+.popup-container .buttons button:first-child {
+  background: var(--primary);
+  color: var(--w-5);
+}
+.popup-container .buttons button:last-child {
+  background: var(--w-3);
+  color: var(--primary);
+}
+.popup-container .buttons button:hover {
+  filter: brightness(110%);
+}
+
+@media screen and (max-width: 1200px) {
+  .popup-section {
+    display: inline-flex;
+    padding: 70px;
+  }
+  .popup-container {
+    width: 90vw;
+    margin-top: auto;
+    align-self: flex-end;
+    display: grid;
+    grid-template-areas: "h1 p" "buttons buttons";
+    padding: 40px 60px;
+  }
+  .popup-container h1 {
+    grid-area: h1;
+    width: 230px;
+  }
+  .popup-container p {
+    grid-area: p;
+  }
+  .popup-container .buttons {
+    grid-area: buttons;
+    width: 100%;
+    flex-direction: row;
+    justify-content: right;
+  }
+}
+@media screen and (max-width: 900px) {
+  .popup-container h1 {
+    font-size: 42px;
+    line-height: 48px;
+  }
+}
+@media screen and (max-width: 800px) {
+  .popup-container {
+    display: flex;
+    flex-direction: column;
+  }
+}
+@media screen and (max-width: 600px) {
+  .popup-container {
+    width: 100%;
+  }
+  .popup-container .buttons {
+    justify-content: space-between;
+  }
+  .popup-container .buttons button {
+    width: 48%;
+  }
+}
+
+@media screen and (max-width: 500px) {
+  .popup-section {
+    padding: 100px 20px;
+  }
+  .popup-container h1 {
+    width: 100%;
+  }
+  .popup-container {
+    padding: 20px 40px;
+  }
+}
+@media screen and (max-width: 400px) {
+  .popup-container .buttons {
+    flex-direction: column;
+  }
+  .popup-container .buttons button {
+    width: 100%;
+  }
+}

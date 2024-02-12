@@ -1,0 +1,50 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+
+    <title>So that's.. | Home Page</title>
+
+    <!-- Custom Main Style Sheet link -->
+    <link rel="stylesheet" href="style.css" />
+  </head>
+  <body>
+    <section class="popup-section" id="popup-section">
+      <div class="popup-container">
+        <h1> accept <span>cookies</span> </h1>
+        <p>
+          We use these cookies to gather information about the way users
+          interact with our website. We use this information to create reports
+          and help us improve the website. You can read our Cookies policy.
+        </p>
+        <div class="buttons" id="popup-control-btns">
+          <button class="accept-btn">Accept</button>
+          <button class="close-btn">Do not accept</button>
+        </div>
+      </div>
+    </section>
+  </body>
+  <script>
+    // Getting Elements from the DOM
+    const popupElem = document.querySelector("section#popup-section");
+    const acceptBtn = document.querySelector("#popup-control-btns .accept-btn");
+    const closeBtn = document.querySelector("#popup-control-btns .close-btn");
+
+    const hidePopup = () => (popupElem.style.display = "none");
+
+    // Action on agree button
+    acceptBtn.addEventListener("click", () => {
+      alert("Agree");
+      //   Closing the Popup
+      hidePopup();
+    });
+
+    // Action on disagree button
+    closeBtn.addEventListener("click", () => {
+      alert("Disagree");
+      //   Closing the Popup
+      hidePopup();
+    });
+  </script>
+</html>

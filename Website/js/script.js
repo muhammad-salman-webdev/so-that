@@ -1,4 +1,3 @@
-console.log("JavaScript is working");
-function func() {
-  console.log("hihihi");
-}
+document
+  .querySelector("ul#menu-header-menu a[aria-current='page']")
+  .classList.add("active");

@@ -474,30 +474,38 @@ header.header-light .header-navigation nav a.active {
 .splide-section {
   width: 1000px;
   margin: 100px auto 80px;
-}
 
-.splide-section .splide__arrow {
+  /* line number 1 */
+  overflow: hidden;
+}
+/* line number 2 */
+
+/* .splide-section .splide__arrow {
   display: none;
-}
+} */
 
-.splide-section .splide__pagination {
+/* .splide-section .splide__pagination {
   position: static;
   justify-content: left;
   padding: 0;
-}
-.splide-section .splide__pagination__page,
+} */
+
+/* line number 3 */
+.problems-swiper-pagination *,
 .swiper-pagination * {
   border-radius: 1px !important;
   width: 12px !important;
   height: 12px !important;
   background: var(--w-1) !important;
 }
-.swiper-pagination {
+/* line number 4 */
+.swiper-pagination,
+.problems-swiper-pagination {
   margin-top: 20px !important;
   position: static !important;
   max-width: max-content;
 }
-.splide-section .splide__pagination__page.is-active,
+/* line number 5 */
 .swiper-pagination-bullet-active {
   background: var(--primary) !important;
   transform: scale(1);

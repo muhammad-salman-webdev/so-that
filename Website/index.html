@@ -192,41 +192,45 @@
     <!-- ############################ -->
 
     <section class="splide-section">
-      <div class="splide">
-        <div class="splide__track">
-          <ul class="splide__list">
-            <li class="splide__slide">
-              <div class="problem-splide">
-                <h1>mental health problems </h1>
-                <p>
-                  Restaurant workers have the highest risk of mental health
-                  problems of any service industry
-                </p>
-                <img src="media/images/girl_stressed.png" alt="#" />
-              </div>
-            </li>
-            <li class="splide__slide">
-              <div class="problem-splide">
-                <h1>mental health problems </h1>
-                <p>
-                  Restaurant workers have the highest risk of mental health
-                  problems of any service industry
-                </p>
-                <img src="media/images/girl_stressed.png" alt="#" />
-              </div>
-            </li>
-            <li class="splide__slide">
-              <div class="problem-splide">
-                <h1>mental health problems </h1>
-                <p>
-                  Restaurant workers have the highest risk of mental health
-                  problems of any service industry
-                </p>
-                <img src="media/images/girl_stressed.png" alt="#" />
-              </div>
-            </li>
-          </ul>
+      <div class="problems-swiper">
+        <!-- Additional required wrapper -->
+        <div class="swiper-wrapper">
+          <!-- Slides -->
+          <div class="swiper-slide">
+            <div class="problem-splide">
+              <h1>mental health problems </h1>
+              <p>
+                Restaurant workers have the highest risk of mental health
+                problems of any service industry
+              </p>
+              <img src="media/images/girl_stressed.png" alt="#" />
+            </div>
+          </div>
+          <!-- Slides -->
+          <div class="swiper-slide">
+            <div class="problem-splide">
+              <h1>mental health problems </h1>
+              <p>
+                Restaurant workers have the highest risk of mental health
+                problems of any service industry
+              </p>
+              <img src="media/images/girl_stressed.png" alt="#" />
+            </div>
+          </div>
+          <!-- Slides -->
+          <div class="swiper-slide">
+            <div class="problem-splide">
+              <h1>mental health problems </h1>
+              <p>
+                Restaurant workers have the highest risk of mental health
+                problems of any service industry
+              </p>
+              <img src="media/images/girl_stressed.png" alt="#" />
+            </div>
+          </div>
         </div>
+        <!-- If we need pagination -->
+        <div class="problems-swiper-pagination"></div>
       </div>
     </section>
 
@@ -408,29 +412,48 @@
   <!-- Custom JavaScript link -->
   <script src="js/script.js"></script>
 
-  <!-- Splider Resources -->
-  <link rel="stylesheet" href="css/splider.min.css" />
-  <script src="js//splider.min.js"></script>
-
-  <script>
-    new Splide(".splide").mount();
-  </script>
-
   <!-- Swiper Resources -->
   <link rel="stylesheet" href="css/swiper.min.css" />
   <script src="js/swiper.min.js"></script>
 
   <script>
+    var reviewsSwiper = new Swiper(".problems-swiper", {
+      slidesPerView: 1,
+      loop: true,
+      fade: true,
+      autoplay: true,
+      pagination: {
+        el: ".problems-swiper-pagination",
+        clickable: true,
+      },
+      autoplay: {
+        disableOnInteraction: false,
+        delay: 300,
+        pauseOnMouseEnter: true,
+      },
+      breakpoints: {
+        0: {
+          slidesPerView: 1,
+        },
+      },
+    });
+  </script>
+
+  <script>
     var reviewsSwiper = new Swiper(".reviews-container", {
-      slidesPerView: 2,
-      loop: false,
+      slidesPerView: 3,
+      loop: true,
       spaceBetween: 25,
       fade: true,
-      grabCursor: true,
       autoplay: true,
       pagination: {
         el: ".swiper-pagination",
         clickable: true,
+      },
+      autoplay: {
+        disableOnInteraction: false,
+        delay: 300,
+        pauseOnMouseEnter: true,
       },
       breakpoints: {
         0: {
@@ -439,8 +462,10 @@
         800: {
           slidesPerView: 2,
         },
+        1200: {
+          slidesPerView: 3,
+        },
       },
     });
-    reviewsSwiper.mount();
   </script>
 </html>
